@@ -1,0 +1,21 @@
+printf(3) - man Holbi page
+
+NAME
+printf
+Is the function to do formatted printing.
+
+SYNOPSIS
+#include <
+
+int printf(const char* format,...)
+
+DESCRIPTION 
+Una descripción más detallada del propósito y mecanismos del comando o función.
+
+EXAMPLES - Ejemplos comunes, generalmente del más simple al más complejo.
+OPTIONS - Descripciones de cada una de las opciones que toma el comando y que hacen.
+EXIT STATUS - El significado de los distintos códigos de salida.
+FILES - Fichero relacionados con el comando o función.
+BUGS - Problemas que el comando o función que están pendientes de ser subsanados. También conocido como KNOWN BUGS.
+SEE ALSO - Una lista de comandos o funciones relacionadas.
+AUTHOR, HISTORY, COPYRIGHT, LICENSE, WARRANTY - Información sobre el programa, su pasado, sus términos de uso, y su creador.
