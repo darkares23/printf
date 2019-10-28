@@ -1,12 +1,27 @@
 #ifndef PRINTF
 #define PRINTF
-#include <stdlib.h>
-#include <stdio.h>
 #include <stdarg.h>
+#include <stdio.h>
 
 
 int _putchar(char c);
+void _puts(char *str);
+
+void _puts(char *str);
 
 int _printf(const char *format, ...);
+int char_print(va_list list);
+int string_print(va_list list);
+/**
+*struct format_t - Struct format_t
+*@fm: format
+*@func: associated function
+*/
+typedef struct format_t
+{
+	char *fm;
+	char (*func)(va_list list);
+} fmType;
+
 
 #endif
