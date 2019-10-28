@@ -1,12 +1,15 @@
 #ifndef PRINTF
 #define PRINTF
 #include <stdarg.h>
+#include <stdio.h>
 
 
 int _putchar(char c);
+void _puts(char *str);
 
 int _printf(const char *format, ...);
-void _puts(char *str);
+int char_print(va_list list);
+int string_print(va_list list);
 
 /**
 *struct format_t - Struct format_t
@@ -16,7 +19,7 @@ void _puts(char *str);
 typedef struct format_t
 {
 	char *fm;
-	char (*func)(va_list list);
+	int (*func)(va_list list);
 } fmType;
 
 

@@ -1,52 +1,47 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
  *char_print - prints char
  *@list: char arg
- *@sep: separator
  */
 
-void char_print(va_list list)
+int char_print(va_list list)
 {
+	int i = 0;
+	char *nil = "(null)";
+
 	_putchar(va_arg(list, int));
+	
+	return (i);
 }
-/**
- * int_print - prints int
- *@list: char arg
- *@sep: separator
- * Return: none
- */
 
-void int_print(char *sep, va_list list)
-{
-	printf("%s%i", sep, va_arg(list, int));
-}
-/**
- * float_print - prints floats
- *@list: char arg
- *@sep: separator
- * Return: none
- */
-
-void float_print(char *sep, va_list list)
-{
-	printf("%s%f", sep, va_arg(list, double));
-}
 /**
 * string_print - prints string
 *@list: char arg
-*@sep: separator
 * Return: none
 */
 
-void string_print(char *sep, va_list list)
+int string_print(va_list list)
 {
 	char *s;
-
+	int i = 0, strlen;
+	char text;
+	char *nil = "(null)";
+	
 	s = va_arg(list, char *);
+
 	if (s == NULL)
 	{
-		printf("%s(nil)", sep);
-		return;
+		_puts(nil);
+		for (strlen = 0; nil[strlen] != '\0'; strlen++)
+		
+		return (strlen);
 	}
-	printf("%s%s", sep, s);
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		text = s[i];
+		_putchar(text);
+	}
+	_putchar('\n');
+	return (i);
 }
