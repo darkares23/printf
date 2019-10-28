@@ -8,7 +8,6 @@
 int char_print(va_list list)
 {
 	int i = 0;
-	char *nil = "(null)";
 
 	_putchar(va_arg(list, int));
 	
@@ -42,6 +41,5 @@ int string_print(va_list list)
 		text = s[i];
 		_putchar(text);
 	}
-	_putchar('\n');
 	return (i);
 }

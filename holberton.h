@@ -7,8 +7,6 @@
 int _putchar(char c);
 void _puts(char *str);
 
-void _puts(char *str);
-
 int _printf(const char *format, ...);
 int char_print(va_list list);
 int string_print(va_list list);
@@ -20,7 +18,7 @@ int string_print(va_list list);
 typedef struct format_t
 {
 	char *fm;
-	char (*func)(va_list list);
+	int (*func)(va_list list);
 } fmType;
 
 
