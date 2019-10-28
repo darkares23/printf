@@ -25,21 +25,32 @@ int _printf(const char *format, ...)
 
 	va_start(list, format);
 
+
 	while (format != NULL && format[format_count])
 	{
 		funct_count = 0;
-		while (funct_count < 2)
+		if (format[format_count] == '%')
 		{
-
-			if (format[format_count] == *(form[funct_count]).fm)
+			while (funct_count < 2)
 			{
-				form[funct_count].func(list);
+				if (format[format_count + 1] == *(form[funct_count]).fm)
+				{
+					format_count++;
+					form[funct_count].func(list);
+					bytes_count++;
+				}
+				funct_count++;
 			}
-			funct_count++;
+			format_count++;
 		}
-		format_count++;
+		else
+		{
+			_putchar(format[format_count]);
+			format_count++;
+			bytes_count++;
+		}
 	}
-	_putchar('\n');
+
 	va_end(list);
 	return (bytes_count);
 }
