@@ -39,6 +39,7 @@ int get_format(va_list list, const char *format)
 			bytes_count++;
 		}
 	}
+
 	return (bytes_count);
 }
 

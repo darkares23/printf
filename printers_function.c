@@ -35,5 +35,6 @@ int string_print(va_list list)
 	}
 	for (i = 0; s[i] != '\0'; i++)
 		_putchar(s[i]);
+
 	return (i);
 }
