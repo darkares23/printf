@@ -9,13 +9,21 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
+	int inde;
+
+	fmType form[] = {
+		{"c", char_print},
+		{"s", string_print},
+		{NULL, NULL}
+	};
 
 	if (!format)
 		return (-1);
 		
 	va_start(list, format);
 	
+	inde = get_format(format, list, form);
 	va_end(list);
 
-	return (get_format(format, list));
+	return (inde);
 }
