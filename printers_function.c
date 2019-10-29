@@ -6,11 +6,11 @@
  */
 int char_print(va_list list)
 {
-	int i = 0;
+	int count = 0;
 
-	_putchar(va_arg(list, int));
+	count = count + _putchar(va_arg(list, int));
 
-	return (i);
+	return (count);
 }
 
 /**
@@ -22,8 +22,8 @@ int char_print(va_list list)
 int string_print(va_list list)
 {
 	char *s, *nil = "(null)";
-	int i = 0;
-	
+	int i;
+
 	s = va_arg(list, char *);
 
 	if (s == NULL)

@@ -1,4 +1,53 @@
 #include "holberton.h"
+
+/**
+ *get_format - prints char
+ *@list: char arg
+ *@format: format
+ *Return: 1
+ */
+int get_format(va_list list, const char *format)
+{
+	fmType form[] = {
+		{"c", char_print},
+		{"s", string_print},
+	};
+
+	int i = 0, j = 0, bytes_count = 0;
+
+	while (format[i])
+	{
+		if (format[i] != '%')
+			_putchar(format[i]), bytes_count++, i++;
+		if (format[i] == '%')
+		{
+			i++;
+			if (format[i] == '\0')
+				return (-1);
+			while (format[i] == ' ')
+				i++;
+
+			if (format[i] == '%')
+				_putchar('%'), i++, bytes_count++;
+			else
+			{
+				while (j < 2)
+				{
+					if (format[i] == *(form[j]).fm)
+					{
+						form[j].func(list);
+						bytes_count++;
+						i++;
+					}
+					j++;
+				}
+				j = 0;
+			}
+		}
+	}
+	return (bytes_count);
+}
+
 /**
  * _printf - function that produces output according to a format.
  * @format: is a character string. The format string is
@@ -11,18 +60,12 @@ int _printf(const char *format, ...)
 	va_list list;
 	int inde;
 
-	fmType form[] = {
-		{"c", char_print},
-		{"s", string_print},
-		{NULL, NULL}
-	};
+	va_start(list, format);
 
 	if (!format)
 		return (-1);
-		
-	va_start(list, format);
-	
-	inde = get_format(format, list, form);
+
+	inde = get_format(list, format);
 	va_end(list);
 
 	return (inde);
