@@ -2,7 +2,6 @@
 #define PRINTF
 #include <stdarg.h>
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
 *struct format_t - Struct format_t

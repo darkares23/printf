@@ -9,17 +9,19 @@
  */
 int main(void)
 {
-    
-   // int len2;
-    
+	int len, len2;
 
-    /*len = _printf("Let's try to printf a simple sentence.\n");*/
-    
-    //len2 = printf("Let's try to printf a simple sentence.\n");
+	len = printf("hola%    %%%%c\n", 'n');
+	len2 = _printf("hola%    %%%%c\n", 'n');
 
-    _printf("Length:[%i, %i]\n", 10, 880);
-    printf("Length:[%i, %i]\n", 10, 880);
+	printf("ho  la%s\n", "nsdfsdf");
+	_printf("ho  la%s\n", "nsdfsdf");
 
+	printf("%%%    %s\n", "nsdfsdf");
+	_printf("%%%    %s\n", "nsdfsdf");
+
+	len = _printf("Percent:[%%]\n");
+    len2 = printf("Percent:[%%]\n");
 
     return (0);
 }

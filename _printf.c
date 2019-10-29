@@ -13,33 +13,38 @@ int get_format(va_list list, const char *format)
 		{"s", string_print},
 	};
 
-	int i = 0, j, bytes_count = 0;
+	int i = 0, j = 0, bytes_count = 0;
 
-	while (format != NULL && format[i])
+	while (format[i])
 	{
-		j = 0;
+		if (format[i] != '%')
+			_putchar(format[i]), bytes_count++, i++;
 		if (format[i] == '%')
 		{
-			while (j < 2)
+			i++;
+			if (format[i] == '\0')
+				return (-1);
+			while (format[i] == ' ')
+				i++;
+
+			if (format[i] == '%')
+				_putchar('%'), i++, bytes_count++;
+			else
 			{
-				if (format[i + 1] == *(form[j]).fm)
+				while (j < 2)
 				{
-					i++;
-					form[j].func(list);
-					bytes_count++;
+					if (format[i] == *(form[j]).fm)
+					{
+						form[j].func(list);
+						bytes_count++;
+						i++;
+					}
+					j++;
 				}
-				j++;
+				j = 0;
 			}
-			i++;
-		}
-		else
-		{
-			_putchar(format[i]);
-			i++;
-			bytes_count++;
 		}
 	}
-
 	return (bytes_count);
 }
 
