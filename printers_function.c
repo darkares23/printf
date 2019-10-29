@@ -1,45 +1,40 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
  *char_print - prints char
  *@list: char arg
+ *Return: 1
  */
-
 int char_print(va_list list)
 {
-	int i = 0;
+	int count = 0;
 
-	_putchar(va_arg(list, int));
-	
-	return (i);
+	count = count + _putchar(va_arg(list, int));
+
+	return (count);
 }
 
 /**
 * string_print - prints string
 *@list: char arg
-* Return: none
+* Return: len of sring
 */
 
 int string_print(va_list list)
 {
-	char *s;
-	int i = 0, strlen;
-	char text;
-	char *nil = "(null)";
-	
+	char *s, *nil = "(null)";
+	int i;
+
 	s = va_arg(list, char *);
 
 	if (s == NULL)
 	{
 		_puts(nil);
-		for (strlen = 0; nil[strlen] != '\0'; strlen++)
-		
-		return (strlen);
+		for (i = 0; nil[i] != '\0'; i++)
+		;
+		return (i);
 	}
 	for (i = 0; s[i] != '\0'; i++)
-	{
-		text = s[i];
-		_putchar(text);
-	}
+		_putchar(s[i]);
+
 	return (i);
 }
