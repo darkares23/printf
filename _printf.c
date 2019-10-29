@@ -35,8 +35,7 @@ int get_format(va_list list, const char *format)
 				{
 					if (format[i] == *(form[j]).fm)
 					{
-						form[j].func(list);
-						bytes_count++;
+						bytes_count = form[j].func(list);
 						i++;
 					}
 					j++;
