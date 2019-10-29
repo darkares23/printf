@@ -6,53 +6,26 @@
 
 int int_print(va_list list)
 {
-	int n = va_arg(list, int);
+	unsigned int n = va_arg(list, int), x;
+	int count = 0;	
 
-if (n < 0)
-{
-_putchar('-');
-n = n * -1;
-}
-if (n / 10 != 0)
-n = (n / 10);
-_putchar((n % 10) + '0');
-/**
-	if (a = 0)
+	if (n < 0)
 	{
 		_putchar('-');
+	n = n * -1;
+	count = count + 1;
 	}
-	if (a / 10 != 0)
+	x = n;
+	if (n / 10 != 0);
+		int_print(n);
+	_putchar((n % 10) + '0');
+
+	while (x > 9)
 	{
-		a = (a / 10);
-		_putchar((a % 10) + '0');
+		x = x / 10;
+		count++;
 	}
-*/
+	count++;
+	return (count);
 	
-	/**
-		while (a > 9)
-		{
-			a++;
-		}
-	return(a);
-	*/
-	/**
-	int int_print(va_list list)
-	{
-		a = va_arg(list, int);
-
-		if (a <= 9 && a >= -9)
-		{
-			return (1);
-		}
-		else
-		{
-			return (int_print(a++));
-		}
-	}
-	return(0);
-	*/
-	return (0);
 }
-
-
-

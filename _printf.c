@@ -11,6 +11,7 @@ int get_format(va_list list, const char *format)
 	fmType form[] = {
 		{"c", char_print},
 		{"s", string_print},
+		{"i", int_print},
 	};
 
 	int i = 0, j, bytes_count = 0;
@@ -20,7 +21,7 @@ int get_format(va_list list, const char *format)
 		j = 0;
 		if (format[i] == '%')
 		{
-			while (j < 2)
+			while (j < 3)
 			{
 				if (format[i + 1] == *(form[j]).fm)
 				{

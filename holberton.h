@@ -22,6 +22,7 @@ int _printf(const char *format, ...);
 int get_format(va_list list, const char *format);
 int char_print(va_list list);
 int string_print(va_list list);
+int int_print(va_list list);
 
 
 #endif

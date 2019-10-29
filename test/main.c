@@ -17,8 +17,8 @@ int main(void)
     
     //len2 = printf("Let's try to printf a simple sentence.\n");
 
-    _printf("Length:[%i, %i]\n", 10, 880);
-    printf("Length:[%i, %i]\n", 10, 880);
+    _printf("Length:[%i, %i]\n", -5000, 2000);
+    printf("Length:[%i, %i]\n", -5000, 2000);
 
 
     return (0);
