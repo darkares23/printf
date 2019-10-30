@@ -14,14 +14,11 @@ int main(void)
 	len = printf("hola%    %%%%c\n", 'n');
 	len2 = _printf("hola%    %%%%c\n", 'n');
 
-	printf("ho  la%s\n", "nsdfsdf");
-	_printf("ho  la%s\n", "nsdfsdf");
+	len = printf("hola\n");
+	len2 = _printf("hola\n");
 
-	printf("%%%    %s\n", "nsdfsdf");
-	_printf("%%%    %s\n", "nsdfsdf");
-
-	len = _printf("Percent:[%%]\n");
-    len2 = printf("Percent:[%%]\n");
+	printf("%!\n");
+	_printf("%!\n");
 
     return (0);
 }

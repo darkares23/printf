@@ -13,12 +13,12 @@ int get_format(va_list list, const char *format)
 		{"s", string_print},
 	};
 
-	int i = 0, j = 0, bytes_count = 0;
+	int i = 0, j = 0, count = 0;
 
 	while (format[i])
 	{
 		if (format[i] != '%')
-			_putchar(format[i]), bytes_count++, i++;
+			_putchar(format[i]), count++, i++;
 		if (format[i] == '%')
 		{
 			i++;
@@ -28,14 +28,14 @@ int get_format(va_list list, const char *format)
 				i++;
 
 			if (format[i] == '%')
-				_putchar('%'), i++, bytes_count++;
+				_putchar('%'), i++, count++;
 			else
 			{
-				while (j < 2)
+				while (j <= 1)
 				{
 					if (format[i] == *(form[j]).fm)
 					{
-						bytes_count = form[j].func(list);
+						count += form[j].func(list);
 						i++;
 					}
 					j++;
@@ -44,7 +44,8 @@ int get_format(va_list list, const char *format)
 			}
 		}
 	}
-	return (bytes_count);
+	printf("%i\n", count);
+	return (count);
 }
 
 /**
@@ -65,6 +66,7 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	inde = get_format(list, format);
+
 	va_end(list);
 
 	return (inde);
