@@ -1,19 +1,21 @@
-printf(3) - man Holbi page
+.TH printf(3) - man Holbi page
 
-NAME
-printf
+.SH NAME
+
+.SB printf
 Is the function to do formatted printing.
 
-SYNOPSIS
-#include <
+.SH SYNOPSIS
 
-int printf(const char* format,...)
+.B #include "holberton.h"
 
-DESCRIPTION
+.B int printf(const char* format,...)
+
+.SH DESCRIPTION
 
 The printf function performs received printouts by means of formats.  
 
-        printf("text1 %codeFormat1 textn %codeFormatn",  variable1, variablen);
+  rintf("text1 %codeFormat1 textn %codeFormatn",  variable1, variablen);
         
 Prints one message per screen using a "format string" that includes instructions 
 for mixing multiple strings in the final string to be displayed on the screen.
@@ -24,12 +26,14 @@ literally and marks to be replaced by text obtained from the additional paramete
 Therefore, printf is called with as many parameters as there are marks in the format string
 plus the string itself.
 
-Return value
+
+.B Return value
+
+function must return number of printed characters. 
+Including null byte.
 
 
-
-
-Format of the format string
+.B Format of the format string
 
 the format string is made up of information about the output formats.
 It consists of individual groups of characters, which must start with the % symbol. 
@@ -61,62 +65,112 @@ Remember, every mark, therefore, begins with the symbol "%" and ends with its ty
 Each of the names (parameter, flags, width, precision, length and type) represents a set
 of possible values that are explained below.
 
-Type	                         Descripción
+.B Type and descripción
 
-%c                  Prints the corresponding ASCII character
-%d, %i              Decimal conversion with integer sign
-%x, %X              Conversión hexadecimal sin signo
-%p                  Memory address (pointer)
-%e, %E              Conversion to floating point with sign in scientific notation
-%f, %F              Conversion to floating point with sign, using decimal point
-%g, %G              Conversion to floating point, using the notation that requires the least space
-%o                  Unsigned octal conversion of an integer
-%u                  Unsigned decimal conversion of an integer
-%s                  Character string (ending in '\0')
-%%                  Prints the % symbol                      
+.B %c
 
+Prints the corresponding ASCII character
 
-Flags	            Description
+.B %d, %i
 
-number              Fill in with spaces (or with zeros, see next flag) to the left until the value of the number.
+Decimal conversion with integer sign
 
-0                   It is filled with leading zeros up to the value given by the previous flag. For example "%03d" 
-                    prints a justified number with zeros up to three digits.
+.B %x, %X
 
-+                   Print the sign of a number
+ Conversión hexadecimal sin signo
 
--                   Justifies the field to the left (by default we have already said that it is justified to the right)
+.B %p
 
-#                   Formato alternativo. Para reales se dejan ceros al final y se imprime siempre la coma. Para números que
-                    no están en base 10, se añade un prefijo denotando la base.
+Memory address (pointer)
 
+.B %e, %E
 
-Parameter           Description
+Conversion to floating point with sign in scientific notation
 
-n$                  n" is replaced by a number to change the order in which arguments are processed. For example %3$d refers 
-                    to the third argument regardless of its place in the format string.    
+.B %f, %F
 
+Conversion to floating point with sign, using decimal point
 
-Width               Description
+.B %g, %G
 
-number              Size of the width of the field where the value will be printed.
+Conversion to floating point, using the notation that requires the least space
 
-*                   Same as the previous case, but the number to be used is passed as parameter just before the value.
-                    For example printf("%*d", 5, 10) prints the number 10, but with a width of five digits
-                    (i.e. it will fill in with 3 blank spaces on the left).
+.B %o
 
+Unsigned octal conversion of an integer
 
-Precision           Description
+.B %u
 
-number              Decimal part size for real numbers. Number of characters to print for text strings
+Unsigned decimal conversion of an integer
 
-*                   Same as the previous case, but the number to be used is passed as parameter just before the value.
-                    For example printf("%.*s", 3, "abcdef") prints "abc".
+.B %s
+
+Character string (ending in '\0')
+
+.B %%
+
+Prints the % symbol                      
 
 
+.B Flags and description
+
+.B number
+
+Fill in with spaces (or with zeros, see next flag) to the left until the value of the number.
+
+.B 0
+
+It is filled with leading zeros up to the value given by the previous flag. For example "%03d" 
+prints a justified number with zeros up to three digits.
+
+.B +
+
+Print the sign of a number
+
+.B -
+
+Justifies the field to the left (by default we have already said that it is justified to the right)
+
+.B #
+
+Alternative format. For real, zeros are left at the end and the comma is always printed. For numbers that
+are not in base 10, a prefix is added denoting the base.
 
 
-EXAMPLE
+.B Parameter and description
+
+.B n$
+
+n" is replaced by a number to change the order in which arguments are processed. For example %3$d refers 
+to the third argument regardless of its place in the format string.    
+
+
+.B Width and description
+
+.B number
+
+Size of the width of the field where the value will be printed.
+
+.B *
+
+Same as the previous case, but the number to be used is passed as parameter just before the value.
+For example printf("%*d", 5, 10) prints the number 10, but with a width of five digits
+(i.e. it will fill in with 3 blank spaces on the left).
+
+
+.B Precision and description
+
+.B number
+
+Decimal part size for real numbers. Number of characters to print for text strings
+
+.B *
+
+Same as the previous case, but the number to be used is passed as parameter just before the value.
+For example printf("%.*s", 3, "abcdef") prints "abc".
+
+
+.SH EXAMPLE
 
 
 #include <stdio.h>
@@ -146,13 +200,13 @@ EXAMPLE
 }
 
 
-EXIT STATUS - El significado de los distintos códigos de salida.
-FILES - Fichero relacionados con el comando o función.
-BUGS - Problemas que el comando o función que están pendientes de ser subsanados. También conocido como KNOWN BUGS.
+.SH BUGS - Problemas que el comando o función que están pendientes de ser subsanados. También conocido como KNOWN BUGS.
 
-SEE ALSO 
+
+.SH SEE ALSO 
 
 printf(1), asprintf(3), dprintf(3), scanf(3), setlocale(3), wcrtomb(3), wprintf(3), locale(5)
 
 
-AUTHOR, HISTORY, COPYRIGHT, LICENSE, WARRANTY - Información sobre el programa, su pasado, sus términos de uso, y su creador.git
+.SH AUTHOR
+Julian Catañeda, Juan Sebastia Ocampo. 
