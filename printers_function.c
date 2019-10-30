@@ -40,3 +40,32 @@ int string_print(va_list list)
 	}
 	return (i);
 }
+
+/**
+*int_print - prints int
+*@list: int print
+*Return: len of int
+*/
+
+int int_print(va_list list)
+{
+	unsigned int num = va_arg(list, int);
+	int count = 1, temp = 0;
+
+	temp = num;
+	if (temp < 0)
+	{
+		_putchar('-');
+		temp = temp * -1;
+		num = temp;
+		count++;
+	}
+	while (num > 9)
+	{
+		num = num / 10;
+		count++;
+	}
+
+	recursion_int(temp);
+	return (count);
+}

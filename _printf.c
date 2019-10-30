@@ -12,6 +12,7 @@ int get_format(va_list list, const char *format)
 		{"c", char_print},
 		{"s", string_print},
 		{"i", int_print},
+		{"d", int_print}
 	};
 
 	int i = 0, j = 0, bytes_count = 0;
@@ -32,7 +33,7 @@ int get_format(va_list list, const char *format)
 				_putchar('%'), i++, bytes_count++;
 			else
 			{
-				while (j < 3)
+				while (j < 4)
 				{
 					if (format[i] == *(form[j]).fm)
 					{

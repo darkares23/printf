@@ -22,6 +22,7 @@ int get_format(va_list list, const char *format);
 int char_print(va_list list);
 int string_print(va_list list);
 int int_print(va_list list);
+void recursion_int(int num);
 
 
 #endif
