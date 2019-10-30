@@ -175,6 +175,7 @@ No known bugs.
 
 printf(1), asprintf(3), dprintf(3), scanf(3), setlocale(3), wcrtomb(3), wprintf(3), locale(5)
 
-
+.DATE
+30/10/2019
 .SH AUTHOR
 Julian Catañeda, Juan Sebastian Ocampo. 

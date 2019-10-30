@@ -76,7 +76,8 @@ EXAMPLE
   return 0;
 }
 
-
+DATE
+30/10/2019
 CONTRIBUTORS
 
 Juann Sebastian Ocampo - 1162@holbertonschool.com
