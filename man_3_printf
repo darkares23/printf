@@ -15,7 +15,7 @@ Is the function to do formatted printing.
 
 The printf function performs received printouts by means of formats.  
 
-  rintf("text1 %codeFormat1 textn %codeFormatn",  variable1, variablen);
+  printf("text1 %codeFormat1 textn %codeFormatn",  variable1, variablen);
         
 Prints one message per screen using a "format string" that includes instructions 
 for mixing multiple strings in the final string to be displayed on the screen.
@@ -75,35 +75,7 @@ Prints the corresponding ASCII character
 
 Decimal conversion with integer sign
 
-.B %x, %X
-
- Conversión hexadecimal sin signo
-
-.B %p
-
-Memory address (pointer)
-
-.B %e, %E
-
-Conversion to floating point with sign in scientific notation
-
-.B %f, %F
-
-Conversion to floating point with sign, using decimal point
-
-.B %g, %G
-
-Conversion to floating point, using the notation that requires the least space
-
-.B %o
-
-Unsigned octal conversion of an integer
-
-.B %u
-
-Unsigned decimal conversion of an integer
-
-.B %s
+B %s
 
 Character string (ending in '\0')
 
@@ -184,23 +156,19 @@ For example printf("%.*s", 3, "abcdef") prints "abc".
 
   char Char='c'; char string []= "This is a string";
 
-    printf ("numint value %d\n", numint);
+  printf ("numint value %d\n", numint);
+    
+  printf ("Char value %c\n", Char);
 
-    printf ("numLong value %ld\n", numLong);
+  printf ("string value %s\n", string);
 
-    printf ("numFloat value %f\n", numFloat);
-
-    printf ("numDouble value %lf\n", numDouble);
-
-    printf ("Char value %c\n", Char);
-
-    printf ("string value %s\n", string);
-
-    return 0;
+  return 0;
 }
 
 
-.SH BUGS - Problemas que el comando o función que están pendientes de ser subsanados. También conocido como KNOWN BUGS.
+.SH BUGS 
+
+No known bugs.
 
 
 .SH SEE ALSO 
@@ -209,4 +177,4 @@ printf(1), asprintf(3), dprintf(3), scanf(3), setlocale(3), wcrtomb(3), wprintf(
 
 
 .SH AUTHOR
-Julian Catañeda, Juan Sebastia Ocampo. 
+Julian Catañeda, Juan Sebastian Ocampo. 
