@@ -24,5 +24,4 @@ int string_print(va_list list);
 int int_print(va_list list);
 void recursion_int(int num);
 
-
 #endif

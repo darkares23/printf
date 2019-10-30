@@ -28,12 +28,11 @@ int get_format(va_list list, const char *format)
 				return (-1);
 			while (format[i] == ' ')
 				i++;
+
 			if (format[i] == '%')
 				_putchar('%'), i++, bytes_count++;
 			else
 			{
-				if (format[i] != *(form[j]).fm)
-					_putchar(format[i - 1]), _putchar(format[i]), bytes_count += 2, i++;
 				while (j < 4)
 				{
 					if (format[i] == *(form[j]).fm)
