@@ -52,6 +52,9 @@ a = _printf("%K\n");
 b = printf("%%K\n");
 printf("r1: %d, r2: %i \n", a,b);
 
+a = _printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
+b = printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
+printf("r1: %d, r2: %i \n", a,b);
 
     return (0);
 }
