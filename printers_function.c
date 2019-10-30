@@ -33,8 +33,10 @@ int string_print(va_list list)
 		;
 		return (i);
 	}
+	else
+	{
 	for (i = 0; s[i] != '\0'; i++)
 		_putchar(s[i]);
-
+	}
 	return (i);
 }
