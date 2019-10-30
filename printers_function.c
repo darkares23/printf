@@ -56,13 +56,13 @@ int int_print(va_list list)
 	if (temp < 0)
 	{
 		_putchar('-');
-		temp = temp * -1;
+		temp *= -1;
 		num = temp;
 		count++;
 	}
 	while (num > 9)
 	{
-		num = num / 10;
+		num /= 10;
 		count++;
 	}
 
